@@ -3,7 +3,7 @@
 Plugin Name: SMTP URI and logging
 Plugin URI: https://github.com/szepeviktor
 Description: SMTP settings for WordPress and error logging.
-Version: 0.4.2
+Version: 0.4.3
 License: The MIT License (MIT)
 Author: Viktor Szépe
 Author URI: http://www.online1.hu/webdesign/

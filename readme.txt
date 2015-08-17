@@ -4,7 +4,7 @@ Donate link: https://szepe.net/wp-donate/
 Tags: email, mail, send, smtp, starttls, tls, gmail, mandrill, hotmail, outlook
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 0.4.2
+Stable tag: 0.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,25 +17,26 @@ It is very easy to set up SMTP. You can find the settings for this plugin at the
 
 You should get your SMTP settings from your ISP, hosting provider, webmaster, email provider etc.
 
-Encryption types (protocols) are as follows:
-
-* For encrypted connection (STARTTLS on submission port) start your SMTP URI with `smtpTLS://` - the default port is 587.
-* For fully SSL encrypted connection (SMTPS) start it with `smtps://` - the default port is 465.
-* For unencrypted connection (plain SMTP) start it with `smtp://` - the default port is 25. This is **not recommended** for non-local servers.
-
-Using every option SMTP URI formally looks like:
+Using every option SMTP URI formally looks like this:
 
 `
 smtpTLS://USERNAME:PASSWORD@HOST:PORT
 `
 
 Thus encryption type and `://` and user name and `:` and password and `@` and mail server name and `:` and port number.
+All except encryption type and mail server (host name) are optional.
+
+SMTP encryption types are as follows:
+
+* For encrypted connection (STARTTLS on submission port) start your SMTP URI with `smtpTLS://` - the default port is 587.
+* For fully SSL encrypted connection (SMTPS) start it with `smtps://` - the default port is 465.
+* For unencrypted connection (plain SMTP) start it with `smtp://` - the default port is 25. This is **not recommended** for non-local servers.
 
 **WARNING!** Use [URL-encoded](http://meyerweb.com/eric/tools/dencoder/) strings.
 
 You can find the settings for this plugin at the bottom of WordPress admin Options / General.
 
-You may define your SMTP URI in `wp-config.php`:
+You may define your SMTP URI also in `wp-config.php`:
 
 `
 define( 'SMTP_URI', 'smtpTLS://USERNAME:PASSWORD@HOST:PORT' );
@@ -125,6 +126,9 @@ $mail->addBCC( get_bloginfo( 'admin_email' ) );
 `
 
 == Changelog ==
+
+= 0.4.3 =
+* Reorder and rephrase things
 
 = 0.4.2 =
 * Initial release on WordPress.org
