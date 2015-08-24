@@ -4,7 +4,7 @@ Donate link: https://szepe.net/wp-donate/
 Tags: email, mail, send, smtp, starttls, tls, gmail, mandrill, hotmail, outlook
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 0.4.3
+Stable tag: 0.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,28 +77,29 @@ Authenticated connection to localhost on port 25
 smtp://john.doe:Secretpwd1@localhost
 `
 
-"@" sign in the username
+"@" sign in the username, a Gmail example
 
-`
-smtps://john.doe%40@gmail.com:Secretpwd1@smtp.gmail.com
-`
-
-Gmail example
 
 `
 smtps://your.address%40gmail.com:Gmail_password@smtp.gmail.com
 `
 
-Unauthenticated SMTP server on a custom port
+Sendgrid example
 
 `
-smtpTLS://mail.server.net:2525
+smtpTLS://CREDENTIAL-USERNAME:PASSWORD@smtp.sendgrid.net
 `
 
 Mandrill example
 
 `
 smtpTLS://REGISTERED%40EMAIL:API-KEY@smtp.mandrillapp.com
+`
+
+Unauthenticated SMTP server on a custom port
+
+`
+smtpTLS://mail.server.net:2525
 `
 
 Development goes on on [GitHub](https://github.com/szepeviktor/smtp-uri).
@@ -126,6 +127,9 @@ $mail->addBCC( get_bloginfo( 'admin_email' ) );
 `
 
 == Changelog ==
+
+= 0.4.4 =
+* Encryption is explicitly disabled when using `smtp://` (PHP 5.6 requires valid certificate)
 
 = 0.4.3 =
 * Reorder and rephrase things
